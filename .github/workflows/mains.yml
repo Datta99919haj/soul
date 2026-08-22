@@ -1,0 +1,17 @@
+name: API
+
+on:
+  push:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: pip install telebot pymongo aiohttp certifi psutil pytz
+      - run: python api.py
